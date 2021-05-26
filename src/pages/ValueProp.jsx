@@ -1,5 +1,6 @@
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
+import { API_URL } from '../config/api';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
@@ -22,7 +23,7 @@ const ValueProp = ({ title, description, image, index }) => {
     <section className={clsx(classes.root, index % 2 === 0 && classes.isGrey)}>
       <h2>{title}</h2>
       <p>{description}</p>
-      <img className={classes.image} src={`http://localhost:1337${image}`} />
+      <img className={classes.image} src={`${API_URL}${image}`} />
     </section>
   );
 };
